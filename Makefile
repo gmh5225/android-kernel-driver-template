@@ -1,6 +1,6 @@
 MODULE_NAME := demo
-SRC_DIR := src
 INC_DIR := include
+SRC_DIR := src
 
 ifneq ($(KERNELRELEASE),)
 	ccflags-y += -target aarch64
