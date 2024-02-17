@@ -9,8 +9,8 @@ ifneq ($(KERNELRELEASE),)
 	ccflags-y += -O2
 	ccflags-y += -Wall -Wno-error -Wno-unused-value
 	ccflags-y += -D__ANDROID_COMMON_KERNEL__
-	ccflags-y += -I$(PWD)/$(INC_DIR)
 	
+	ccflags-y += -I$(PWD)/$(INC_DIR)
 	EXTRA_LDFLAGS += $(ANDROID_OLLVM_INSTALLER)lib/linux/libclang_rt.builtins-aarch64.a
 
 	$(MODULE_NAME)-objs:= $(SRC_DIR)/main.o
