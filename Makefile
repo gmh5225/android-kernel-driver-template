@@ -6,7 +6,8 @@ ifneq ($(KERNELRELEASE),)
 	ccflags-y += -target aarch64
 	ccflags-y += -fandroid-kernel-driver-mode
 	ccflags-y += -flto
-	ccflags-y += -Wall -O2 -Wno-error -Wno-unused-value
+	ccflags-y += -O2
+	ccflags-y += -Wall -Wno-error -Wno-unused-value
 	ccflags-y += -D__ANDROID_COMMON_KERNEL__
 	ccflags-y += -I$(PWD)/$(INC_DIR)
 	
