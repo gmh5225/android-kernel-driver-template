@@ -1,5 +1,5 @@
-#ifndef _MAIN_H
-#define _MAIN_H
+#ifndef TEMPLATE_MAIN_H
+#define TEMPLATE_MAIN_H
 
 #include <linux/module.h>
 #include <linux/types.h>
