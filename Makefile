@@ -22,6 +22,7 @@ else
 	KIT_CLANG := $(KIT_CLANG_PATH)clang
 	KIT_LLD := $(KIT_CLANG_PATH)ld.lld
 	KIT_AR := $(KIT_CLANG_PATH)llvm-ar
+	KIT_STRIP := $(KIT_CLANG_PATH)llvm-strip
 	KIT_CLANG_FORMAT := $(KIT_CLANG_PATH)clang-format
 
 .PHONY: all clean format
@@ -31,7 +32,7 @@ all:
 
 clean:
 	rm -f *.o *.mod.o *.mod.c *.symvers *.order .*.o.cmd .*.cmd  ./src/.*.o.cmd ./src/*.o *.mod
-	$(KIT_CLANG_PATH)llvm-strip --strip-debug $(MODULE_NAME).ko
+	$(KIT_STRIP) --strip-debug $(MODULE_NAME).ko
 
 format:
 	find $(PWD)/$(INC_DIR) $(PWD)/$(SRC_DIR) -iname "*.h" -o -iname "*.c" | xargs $(KIT_CLANG_FORMAT) -i
