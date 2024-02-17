@@ -15,7 +15,5 @@ module_init(driver_entry);
 module_exit(driver_unload);
 
 MODULE_LICENSE("unknown");
-
 MODULE_AUTHOR("unknown");
-
 MODULE_DESCRIPTION("android kernel driver template");
