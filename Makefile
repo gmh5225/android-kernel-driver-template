@@ -7,30 +7,30 @@ SRC_DIR := src
 
 # Check if we are being invoked by the kernel build system
 ifneq ($(KERNELRELEASE),)
-    # Compiler flags for targeting a specific architecture
+# Compiler flags for targeting a specific architecture
 	ccflags-y += -target aarch64
-	# Flags for Android kernel driver mode
+# Flags for Android kernel driver mode
 	ccflags-y += -fandroid-kernel-driver-mode
-	# Enable link-time optimization
+# Enable link-time optimization
 	ccflags-y += -flto
-	# Optimization level and warnings
+# Optimization level and warnings
 	ccflags-y += -O2
 	ccflags-y += -Wall -Wno-error -Wno-unused-value
-	# Define for Android common kernel
+# Define for Android common kernel
 	ccflags-y += -D__ANDROID_COMMON_KERNEL__
 	
-	# Include directory for header files
+# Include directory for header files
 	ccflags-y += -I$(PWD)/$(INC_DIR)
-	# Extra linker flags, specifying a library for linker
+# Extra linker flags, specifying a library for linker
 	EXTRA_LDFLAGS += $(ANDROID_OLLVM_INSTALLER)lib/linux/libclang_rt.builtins-aarch64.a
 
-	# Specify the object files required for the module
+# Specify the object files required for the module
 	$(MODULE_NAME)-objs:= $(SRC_DIR)/main.o
-	# Specify that this is a module target
+# Specify that this is a module target
 	obj-m := $(MODULE_NAME).o
 
 else
-    # Directories and tools for building outside the kernel build system
+# Directories and tools for building outside the kernel build system
 	KIT_DIR := $(ANDROID_KERNEL_PATH)out/$(ANDROID_KERNEL_BRANCH)/common
 	KIT_CLANG_PATH := $(ANDROID_OLLVM_INSTALLER)bin/
 	KIT_CLANG := $(KIT_CLANG_PATH)clang
