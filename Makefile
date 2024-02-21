@@ -31,7 +31,7 @@ all:
 	$(MAKE) -C $(KIT_DIR) PATH=$(KIT_CLANG_PATH):$(PATH) ARCH=arm64 SUBARCH=arm64 CC=$(KIT_CLANG) LD=$(KIT_LLD) AR=$(KIT_AR) LLVM=1 LLVM_IAS=1 CROSS_COMPILE=aarch64-linux-gnu- CLANG_TRIPLE=aarch64-linux-gnu- M=$(PWD) modules
 
 clean:
-	rm -f *.o *.mod.o *.mod.c *.symvers *.order .*.o.cmd .*.cmd  ./src/.*.o.cmd ./src/*.o *.mod
+	rm -f *.o *.mod.o *.mod.c *.symvers *.order .*.o.cmd .*.cmd  ./src/.*.o.cmd ./src/*.o *.mod ./src/.*.o.d
 	$(KIT_STRIP) --strip-debug $(MODULE_NAME).ko
 
 format:
