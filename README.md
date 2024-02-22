@@ -11,6 +11,8 @@ A product kernel, also known as a device kernel or OEM kernel, is the kernel tha
 
 
 ### Requirements
+- Rooted Android devices with [Magisk](https://github.com/topjohnwu/Magisk) or [KernelSU](https://github.com/tiann/KernelSU)
+- ADB
 - VSCode
 - WSL/WSL2
 - WSL plugin for VSCode
@@ -31,6 +33,14 @@ export ANDROID_OLLVM_INSTALLER=$(pwd)/install/
 git clone --recursive https://github.com/gmh5225/android-kernel-driver-template
 cd android-kernel-driver-template
 make && make clean
+```
+
+## Testing
+```
+adb push demo.ko /data/local/tmp
+adb shell su -c insmod /data/local/tmp/demo.ko
+adb shell su -c "lsmod |grep demo"
+adb shell su -c rmmod /data/local/tmp/demo.ko
 ```
 
 ## Credits
