@@ -31,7 +31,7 @@ ifneq ($(KERNELRELEASE),)
 
 else
 # Directories and tools for building outside the kernel build system
-	KIT_DIR := $(ANDROID_KERNEL_PATH)out/$(ANDROID_KERNEL_BRANCH)/common
+	KIT_DIR := $(ANDROID_KERNEL_PATH)common
 	KIT_CLANG_PATH := $(ANDROID_OLLVM_INSTALLER)bin/
 	KIT_CLANG := $(KIT_CLANG_PATH)clang
 	KIT_LLD := $(KIT_CLANG_PATH)ld.lld
