@@ -37,8 +37,8 @@ jobs:
           
     - name: Build
       run: |
-        export ANDROID_KERNEL_PATH=common-android12-5.10-KernelSU/
-        export ANDROID_OLLVM_INSTALLER=install/
+        export ANDROID_KERNEL_PATH=$(pwd)/common-android12-5.10-KernelSU/
+        export ANDROID_OLLVM_INSTALLER=$(pwd)/install/
         cd android-kernel-driver-template
         make && make clean
         
