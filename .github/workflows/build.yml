@@ -44,20 +44,20 @@ jobs:
         
     - name: Package ko
       run: 
-          7z a demo-ko.zip android-kernel-driver-template/demo.ko
+          7z a output-ko.zip android-kernel-driver-template/*.ko
     
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: demo-ko
-        path: demo-ko.zip
+        name: output-ko
+        path: output-ko.zip
     
     - name: Release
       uses: softprops/action-gh-release@v1
       if: ${{ startsWith(github.ref, 'refs/tags/') }}
       with:
         prerelease: ${{ !startsWith(github.ref, 'refs/tags/v') || contains(github.ref, '-pre') }}
-        files: demo-ko.zip
+        files: output-ko.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
