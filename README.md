@@ -1,5 +1,6 @@
 # `android-kernel-driver-template`
 
+[![build](https://github.com/gmh5225/android-kernel-driver-template/actions/workflows/build.yml/badge.svg)](https://github.com/gmh5225/android-kernel-driver-template/actions/workflows/build.yml)
 [![GitHub license](https://img.shields.io/github/license/gmh5225/android-kernel-driver-template)](https://github.com/gmh5225/android-kernel-driver-template/blob/main/LICENSE)
 
 This is a GKI Android kernel driver(AArch64) template compiled using ``llvm-msvc``, aimed at facilitating the development of GKI Android kernel drivers.The development environment used is ``Win11``+``WSL2``+``VSCode``.
@@ -14,7 +15,7 @@ This is a GKI Android kernel driver(AArch64) template compiled using ``llvm-msvc
 - [GKI Kit](https://github.com/gmh5225/common-android12-5.10-KernelSU/releases)
 
 
-### Building AArch64 driver with llvm-msvc
+### Building
 ```
 sudo apt-get install build-essential make cmake
 sudo apt-get install p7zip-full p7zip-rar
@@ -28,3 +29,7 @@ git clone --recursive https://github.com/gmh5225/android-kernel-driver-template
 cd android-kernel-driver-template
 make && make clean
 ```
+
+## Credits
+- ``Linux``
+- Some anonymous people
