@@ -25,7 +25,8 @@ ifneq ($(KERNELRELEASE),)
 	EXTRA_LDFLAGS += $(ANDROID_OLLVM_INSTALLER)lib/linux/libclang_rt.builtins-aarch64.a
 
 # Specify the object files required for the module
-	$(MODULE_NAME)-objs:= $(SRC_DIR)/main.o
+	$(MODULE_NAME)-objs:= $(SRC_DIR)/main.o \
+	$(SRC_DIR)/test.o
 # Specify that this is a module target
 	obj-m := $(MODULE_NAME).o
 
