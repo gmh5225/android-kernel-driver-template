@@ -20,7 +20,7 @@ A product kernel, also known as a device kernel or OEM kernel, is the kernel tha
 - [GKI Kit](https://github.com/gmh5225/common-android12-5.10-KernelSU/releases)
 
 
-### Do something for your WSL/WSL2
+### Setup build deps for your WSL/WSL2
 ```
 sudo passwd root
 sudo apt update
@@ -29,6 +29,24 @@ sudo apt install build-essential make cmake
 sudo apt install p7zip-full p7zip-rar
 ```
 
+### Remove environment variables on windows
+Open ``wsl.conf`` by running:
+```
+sudo vim /etc/wsl.conf
+```
+Append the following lines to the end of the file:
+```
+[interop]
+appendWindowsPath = false
+```
+Restart your WSL instance by executing:
+```
+wsl --terminate <distro>
+```
+Replace <distro> with the name of your distribution, which can be found using the command:
+```
+wsl --list --verbose
+```
 
 ### Building
 ```
