@@ -20,10 +20,18 @@ A product kernel, also known as a device kernel or OEM kernel, is the kernel tha
 - [GKI Kit](https://github.com/gmh5225/common-android12-5.10-KernelSU/releases)
 
 
+### Do something for your WSL/WSL2
+```
+sudo passwd root
+sudo apt update
+sudo apt install python-is-python3
+sudo apt install build-essential make cmake
+sudo apt install p7zip-full p7zip-rar
+```
+
+
 ### Building
 ```
-sudo apt-get install build-essential make cmake
-sudo apt-get install p7zip-full p7zip-rar
 wget -nv https://github.com/gmh5225/common-android12-5.10-KernelSU/releases/download/v1.0.0/GKI-android12-5.10-kit.zip && 7z x GKI-android12-5.10-kit.zip
 wget -nv https://github.com/backengineering/llvm-msvc/releases/download/llvm-msvc-v3.2.9/android-wrapper-llvm-msvc.zip && 7z x android-wrapper-llvm-msvc.zip
 
