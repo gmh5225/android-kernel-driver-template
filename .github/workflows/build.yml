@@ -43,8 +43,9 @@ jobs:
         make && make clean
         
     - name: Package ko
-      run: 
-          7z a output-ko.zip android-kernel-driver-template/*.ko
+      run: |
+          cp android-kernel-driver-template/*.ko ./
+          7z a output-ko.zip *.ko
     
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
