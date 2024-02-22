@@ -35,7 +35,7 @@ cd android-kernel-driver-template
 make && make clean
 ```
 
-## Testing
+## Testing on android12-5.10
 ```
 adb push demo.ko /data/local/tmp
 adb shell su -c insmod /data/local/tmp/demo.ko
