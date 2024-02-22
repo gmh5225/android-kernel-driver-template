@@ -1,0 +1,64 @@
+name: build
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-${{ github.head_ref }}
+  cancel-in-progress: true
+  
+on: [push, pull_request]
+
+jobs:
+  build:
+    # Skip building pull requests from the same repository
+    if: ${{ github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository) }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+    env:
+      BUILD_TYPE: Release
+    steps:
+
+    - name: Setup build deps
+      run: |
+          sudo apt-get install build-essential make cmake \
+          && sudo apt-get install p7zip-full p7zip-rar \
+          && wget -nv https://github.com/gmh5225/common-android12-5.10-KernelSU/releases/download/v1.0.0/GKI-android12-5.10-kit.zip && 7z x GKI-android12-5.10-kit.zip \
+          && wget -nv https://github.com/backengineering/llvm-msvc/releases/download/llvm-msvc-v3.2.9/android-wrapper-llvm-msvc.zip && 7z x android-wrapper-llvm-msvc.zip
+         
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+      with:
+          path: android-kernel-driver-template
+          submodules: 'recursive'
+          
+    - name: Build
+      run: |
+        export ANDROID_KERNEL_BRANCH=android12-5.10
+        export ANDROID_KERNEL_PATH=common-android12-5.10-KernelSU/
+        export ANDROID_OLLVM_INSTALLER=install/
+        cd android-kernel-driver-template
+        make && make clean
+        
+    - name: Package ko
+      run: 
+          7z a demo-ko.zip android-kernel-driver-template/demo.ko
+    
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: demo-ko
+        path: demo-ko.zip
+    
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      if: ${{ startsWith(github.ref, 'refs/tags/') }}
+      with:
+        prerelease: ${{ !startsWith(github.ref, 'refs/tags/v') || contains(github.ref, '-pre') }}
+        files: demo-ko.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
