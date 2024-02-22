@@ -5,6 +5,9 @@
 
 This is a GKI Android kernel driver(AArch64) template compiled using ``llvm-msvc``, aimed at facilitating the development of GKI Android kernel drivers.The development environment used is ``Win11``+``WSL2``+``VSCode``.
 
+### What's [Android GKI](https://source.android.com/docs/core/architecture/kernel/generic-kernel-image)?
+A product kernel, also known as a device kernel or OEM kernel, is the kernel that you ship on your device. Prior to GKI, the product kernel was derived from a series of upstream kernel changes. Figure 1 shows how kernel additions yield a product kernel (OEM/device kernel):
+![image](https://github.com/gmh5225/android-kernel-driver-template/assets/13917777/612e37d0-341a-4f90-9038-c366a05e72fa)
 
 
 ### Requirements
