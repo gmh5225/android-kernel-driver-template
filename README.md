@@ -35,4 +35,5 @@ make && make clean
 
 ## Credits
 - ``Linux``
+- ``Android``
 - Some anonymous people
