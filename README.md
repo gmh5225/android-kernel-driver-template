@@ -15,7 +15,7 @@ A product kernel, also known as a device kernel or OEM kernel, is the kernel tha
 - ADB
 - VSCode
 - WSL/WSL2
-- WSL plugin for VSCode
+- [WSL plugin for VSCode](https://code.visualstudio.com/docs/remote/wsl)
 - [llvm-msvc](https://github.com/backengineering/llvm-msvc/releases)
 - [GKI Kit](https://github.com/gmh5225/common-android12-5.10-KernelSU/releases)
 
