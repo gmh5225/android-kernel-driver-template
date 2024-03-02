@@ -51,7 +51,7 @@ wsl --list --verbose
 ### Building
 ```
 wget -nv https://github.com/gmh5225/common-android12-5.10-KernelSU/releases/download/v1.0.0/GKI-android12-5.10-kit.zip && 7z x GKI-android12-5.10-kit.zip
-wget -nv https://github.com/backengineering/llvm-msvc/releases/download/llvm-msvc-v3.2.9/android-wrapper-llvm-msvc.zip && 7z x android-wrapper-llvm-msvc.zip
+wget -nv https://github.com/backengineering/llvm-msvc/releases/download/llvm-msvc-v3.3.1/android-wrapper-llvm-msvc.zip && 7z x android-wrapper-llvm-msvc.zip
 
 export ANDROID_KERNEL_PATH=$(pwd)/common-android12-5.10-KernelSU/
 export ANDROID_OLLVM_INSTALLER=$(pwd)/install/
