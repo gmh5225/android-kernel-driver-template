@@ -12,6 +12,7 @@ A product kernel, also known as a device kernel or OEM kernel, is the kernel tha
 
 ### Requirements
 - Rooted Android devices``(ARMv8.3)`` with [Magisk](https://github.com/topjohnwu/Magisk) or [KernelSU](https://github.com/tiann/KernelSU)
+- [AndroidDriveSignity](https://github.com/gmh5225/AndroidDriveSignity)
 - ADB
 - VSCode
 - WSL/WSL2
