@@ -3,7 +3,7 @@
 [![build](https://github.com/gmh5225/android-kernel-driver-template/actions/workflows/build.yml/badge.svg)](https://github.com/gmh5225/android-kernel-driver-template/actions/workflows/build.yml)
 [![GitHub license](https://img.shields.io/github/license/gmh5225/android-kernel-driver-template)](https://github.com/gmh5225/android-kernel-driver-template/blob/main/LICENSE)
 
-This is a GKI Android kernel driver(ARMv8.3) template compiled using ``llvm-msvc``, aimed at facilitating the development of GKI Android kernel drivers.The development environment used is ``Win11``+``WSL2``+``VSCode``.
+This is a GKI Android kernel driver(``ARMv8.3``) template compiled using ``llvm-msvc``, aimed at facilitating the development of GKI Android kernel drivers.The development environment used is ``Win11``+``WSL2``+``VSCode``.
 
 ### What's [Android GKI](https://source.android.com/docs/core/architecture/kernel/generic-kernel-image)?
 A product kernel, also known as a device kernel or OEM kernel, is the kernel that you ship on your device. Prior to GKI, the product kernel was derived from a series of upstream kernel changes. Following shows how kernel additions yield a product kernel (OEM/device kernel):
@@ -11,7 +11,7 @@ A product kernel, also known as a device kernel or OEM kernel, is the kernel tha
 
 
 ### Requirements
-- Rooted Android devices with [Magisk](https://github.com/topjohnwu/Magisk) or [KernelSU](https://github.com/tiann/KernelSU)
+- Rooted Android devices``(ARMv8.3)`` with [Magisk](https://github.com/topjohnwu/Magisk) or [KernelSU](https://github.com/tiann/KernelSU)
 - ADB
 - VSCode
 - WSL/WSL2
