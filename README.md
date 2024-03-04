@@ -15,6 +15,7 @@ A product kernel, also known as a device kernel or OEM kernel, is the kernel tha
 - ADB
 - VSCode
 - WSL/WSL2
+- [clangd plugin for VSCode](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)
 - [WSL plugin for VSCode](https://code.visualstudio.com/docs/remote/wsl)
 - [llvm-msvc](https://github.com/backengineering/llvm-msvc/releases)
 - [GKI Kit](https://github.com/gmh5225/common-android12-5.10-KernelSU/releases)
@@ -27,6 +28,7 @@ sudo apt update
 sudo apt install python-is-python3
 sudo apt install build-essential make cmake
 sudo apt install p7zip-full p7zip-rar
+sudo apt install bear
 ```
 
 ### Remove environment variables on windows
@@ -58,7 +60,7 @@ export ANDROID_OLLVM_INSTALLER=$(pwd)/install/
 
 git clone --recursive https://github.com/gmh5225/android-kernel-driver-template
 cd android-kernel-driver-template
-make && make clean
+bear -- make && make clean
 ```
 
 ## Testing on android12-5.10
