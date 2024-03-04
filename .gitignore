@@ -60,4 +60,8 @@ Thumbs.db
 #llvm files
 llvmcache*
 
+#clangd
+.cache/clangd
 
+# CMake
+compile_commands.json

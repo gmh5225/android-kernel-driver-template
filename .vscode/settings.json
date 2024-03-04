@@ -1,0 +1,14 @@
+{
+    "clangd.arguments": [
+        "--all-scopes-completion",
+        "--clang-tidy",
+        "--completion-parse=always",
+        "--header-insertion=never",
+        "--completion-style=detailed",
+        "--function-arg-placeholders=false",
+        "--compile-commands-dir=${workspaceFolder}/",
+        "-log=info",
+        "-j=32"
+    ],
+    "clangd.checkUpdates": true,
+}
