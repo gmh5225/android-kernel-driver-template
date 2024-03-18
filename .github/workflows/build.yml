@@ -27,7 +27,7 @@ jobs:
           sudo apt-get install build-essential make cmake \
           && sudo apt-get install p7zip-full p7zip-rar \
           && wget -nv https://github.com/gmh5225/common-android12-5.10-KernelSU/releases/download/v1.0.1/GKI-android12-5.10-kit.zip && 7z x GKI-android12-5.10-kit.zip \
-          && wget -nv https://github.com/backengineering/llvm-msvc/releases/download/llvm-msvc-v3.3.1/android-wrapper-llvm-msvc.zip && 7z x android-wrapper-llvm-msvc.zip
+          && wget -nv https://github.com/backengineering/llvm-msvc/releases/download/llvm-msvc-v777.1.0/android-wrapper-llvm-msvc.zip && 7z x android-wrapper-llvm-msvc.zip
          
     - name: Checkout Repo
       uses: actions/checkout@v3
